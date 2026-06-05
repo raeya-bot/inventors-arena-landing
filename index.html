@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Inventors Arena | Where Inventors &amp; Investors Meet</title>
+  <meta name="description" content="From a raw idea to a funded, market-ready invention — guided by the experts who get inventors funded. Meet the team behind The Inventors Arena." />
+
+  <!-- ============================================================
+       CUSTOMIZE: set your real booking / contact destination here.
+       Replace every href="#contact" CTA target if you want it to
+       open an external booking link instead of scrolling to the CTA.
+  ============================================================ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:#0A1628; --charcoal:#111827; --footer-bg:#0A0F1A;
+      --gold:#C9A84C; --amber:#E8B84B; --white:#F8F9FA; --silver:#9CA3AF; --crimson:#7B1D1D;
+      --gold-rgb:201,168,76; --amber-rgb:232,184,75;
+      --gold-grad:linear-gradient(135deg,#8a6f2d 0%,#C9A84C 28%,#F2DC9B 50%,#C9A84C 72%,#8a6f2d 100%);
+      --gold-line:linear-gradient(90deg,transparent,rgba(var(--gold-rgb),0.85),transparent);
+      --f-display:'Cinzel','Times New Roman',serif;
+      --f-head:'Raleway',system-ui,sans-serif;
+      --f-body:'Inter',system-ui,sans-serif;
+      --maxw:1200px; --radius:14px; --ease:cubic-bezier(0.22,1,0.36,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: var(--navy); color: var(--white);
+      font-family: var(--f-body); line-height: 1.7; overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 4px; }
+
+    .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+    .section { position: relative; padding: 110px 0; overflow: hidden; }
+    .section--navy { background: var(--navy); }
+    .section--charcoal { background: var(--charcoal); }
+    .center { text-align: center; }
+    @media (max-width: 720px) { .section { padding: 78px 0; } }
+
+    /* Triangle watermark */
+    .tri-watermark::before {
+      content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0.04;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='104' viewBox='0 0 120 104'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='1'%3E%3Cpath d='M60 4 L116 100 L4 100 Z'/%3E%3Cpath d='M60 36 L88 100 L32 100 Z'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 120px 104px;
+    }
+    .section > .wrap { position: relative; z-index: 1; }
+
+    .gold-rule { height: 1px; border: 0; width: 100%; margin: 0; background: var(--gold-line); box-shadow: 0 0 12px rgba(var(--gold-rgb),0.5); opacity: 0.9; }
+
+    /* Headings / eyebrow / sub */
+    .pre-label {
+      font-family: var(--f-display); text-transform: uppercase; letter-spacing: 0.32em;
+      color: var(--gold); font-weight: 600; font-size: 0.82rem;
+      display: inline-flex; align-items: center; gap: 14px; margin-bottom: 22px;
+    }
+    .pre-label::before, .pre-label::after { content: ""; width: 34px; height: 1px; background: rgba(var(--gold-rgb),0.6); }
+    .pre-label--left::after { display: none; }
+    .center .pre-label { justify-content: center; }
+    .section-head { font-family: var(--f-display); color: var(--white); font-weight: 700; line-height: 1.15; letter-spacing: 0.01em; font-size: clamp(2rem,4.2vw,3.2rem); margin: 0; }
+    .section-sub { font-family: var(--f-head); color: var(--silver); font-weight: 400; font-size: clamp(1rem,1.6vw,1.18rem); max-width: 720px; margin: 18px auto 0; }
+    .accent { background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      font-family: var(--f-head); font-weight: 700; letter-spacing: 0.04em; font-size: 0.98rem;
+      padding: 16px 34px; border-radius: 50px;
+      transition: transform .3s var(--ease), box-shadow .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
+      will-change: transform;
+    }
+    .btn--gold { background: linear-gradient(135deg, var(--gold), var(--amber)); color: #1a1206; box-shadow: 0 8px 26px rgba(var(--gold-rgb),0.28); }
+    .btn--gold:hover { transform: translateY(-2px) scale(1.035); box-shadow: 0 12px 40px rgba(var(--amber-rgb),0.55); }
+    .btn--outline { background: transparent; color: var(--gold); border: 1.5px solid var(--gold); }
+    .btn--outline:hover { background: var(--gold); color: #1a1206; box-shadow: 0 10px 30px rgba(var(--gold-rgb),0.35); }
+
+    /* Badge / logo */
+    .badge { display: inline-flex; align-items: center; gap: 12px; }
+    .badge svg { display: block; }
+    .badge-text { font-family: var(--f-display); font-weight: 700; letter-spacing: 0.14em; font-size: 0.9rem; color: var(--white); }
+    .flame { transform-origin: 23px 24px; animation: flicker 2.6s ease-in-out infinite; }
+    @keyframes flicker { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.06); opacity: 0.92; } }
+
+    /* Nav */
+    .nav { position: sticky; top: 0; z-index: 50; transition: background .3s var(--ease), box-shadow .3s var(--ease), backdrop-filter .3s var(--ease); }
+    .nav.scrolled { background: rgba(10,22,40,0.82); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); box-shadow: 0 1px 0 rgba(var(--gold-rgb),0.18); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+    .nav-links { display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; }
+    .nav-links a { font-family: var(--f-head); font-weight: 500; font-size: 0.95rem; color: var(--white); position: relative; padding: 4px 0; transition: color .25s; }
+    .nav-links a::after { content: ""; position: absolute; left: 0; bottom: -2px; width: 0; height: 2px; background: var(--gold); transition: width .3s var(--ease); }
+    .nav-links a:hover { color: var(--amber); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta { display: flex; align-items: center; }
+    .nav-cta .btn { padding: 11px 26px; font-size: 0.88rem; }
+    .hamburger { display: none; width: 42px; height: 42px; flex-direction: column; justify-content: center; gap: 5px; align-items: center; }
+    .hamburger span { width: 24px; height: 2px; background: var(--gold); transition: transform .3s var(--ease), opacity .3s var(--ease); }
+    .mobile-nav { position: fixed; inset: 0; z-index: 49; background: rgba(10,15,26,0.97); -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 26px; opacity: 0; visibility: hidden; transform: scale(1.04); transition: all .3s var(--ease); }
+    .mobile-nav.open { opacity: 1; visibility: visible; transform: scale(1); }
+    .mobile-nav a { font-family: var(--f-display); font-size: 1.5rem; color: var(--white); letter-spacing: 0.06em; }
+    .mobile-nav a:hover { color: var(--gold); }
+    .mobile-close { position: absolute; top: 24px; right: 26px; font-size: 2.4rem; color: var(--gold); line-height: 1; }
+    @media (max-width: 860px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* Hero */
+    .hero { min-height: 90vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; padding: 130px 0 90px; background: var(--navy); }
+    .hero::after { content: ""; position: absolute; left: 50%; bottom: -8%; transform: translateX(-50%); width: 1100px; max-width: 120vw; height: 680px; pointer-events: none; z-index: 0; background: radial-gradient(ellipse at center, rgba(var(--amber-rgb),0.16), rgba(var(--gold-rgb),0.06) 40%, transparent 70%); filter: blur(8px); }
+    .hero .wrap { position: relative; z-index: 2; }
+    .hero-pre { font-family: var(--f-display); text-transform: uppercase; letter-spacing: 0.4em; color: var(--gold); font-weight: 600; font-size: 0.9rem; margin-bottom: 26px; }
+    .hero h1 { font-family: var(--f-display); font-weight: 800; color: var(--white); font-size: clamp(2.6rem,7vw,5.4rem); line-height: 1.08; letter-spacing: 0.01em; margin: 0 0 24px; text-shadow: 0 4px 40px rgba(0,0,0,0.5); }
+    .hero-sub { font-family: var(--f-head); color: var(--silver); font-weight: 400; font-size: clamp(1.05rem,2vw,1.32rem); max-width: 680px; margin: 0 auto 38px; }
+    .scroll-ind { position: absolute; left: 50%; bottom: 28px; transform: translateX(-50%); color: var(--gold); z-index: 2; animation: bounceDown 2.2s ease-in-out infinite; }
+    @keyframes bounceDown { 0%,100% { transform: translate(-50%,0); } 50% { transform: translate(-50%,12px); } }
+
+    /* Video */
+    .video-wrap { max-width: 860px; margin: 52px auto 0; }
+    .video-frame { position: relative; border-radius: var(--radius); overflow: hidden; border: 4px solid rgba(var(--gold-rgb),0.3); box-shadow: 0 0 0 1px rgba(var(--gold-rgb),0.18), 0 30px 80px rgba(0,0,0,0.55), 0 0 60px rgba(var(--gold-rgb),0.18); background: #000; aspect-ratio: 16 / 9; }
+    .video-frame video { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Value cards */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 60px; align-items: start; }
+    @media (max-width: 880px) { .cards { grid-template-columns: 1fr; max-width: 460px; margin-left: auto; margin-right: auto; } }
+    .card { position: relative; background: rgba(8,16,30,0.5); border: 1px solid rgba(var(--gold-rgb),0.14); border-radius: var(--radius); padding: 36px 30px; text-align: left; box-shadow: 0 20px 50px rgba(0,0,0,0.35); transition: transform .4s var(--ease), border-color .4s var(--ease), box-shadow .4s var(--ease); }
+    .card:hover { transform: translateY(-8px); border-color: rgba(var(--gold-rgb),0.5); box-shadow: 0 28px 64px rgba(0,0,0,0.5); }
+    .card-ico { width: 54px; height: 54px; border-radius: 13px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; background: rgba(var(--gold-rgb),0.1); border: 1px solid rgba(var(--gold-rgb),0.28); }
+    .card-ico svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; }
+    .card h3 { font-family: var(--f-display); font-weight: 700; color: var(--white); font-size: 1.3rem; margin: 0 0 10px; }
+    .card p { font-family: var(--f-body); color: var(--silver); font-size: 0.96rem; line-height: 1.65; margin: 0 0 18px; }
+    .pill { display: inline-block; font-family: var(--f-head); font-size: 0.76rem; font-weight: 600; letter-spacing: 0.04em; color: var(--gold); border: 1px solid rgba(var(--gold-rgb),0.6); padding: 7px 15px; border-radius: 50px; background: rgba(var(--gold-rgb),0.06); }
+    .pill--filled { color: #1a1206; background: var(--gold-grad); border-color: transparent; font-weight: 700; }
+
+    /* Final CTA */
+    .final-cta { text-align: center; position: relative; }
+    .final-cta::after { content: ""; position: absolute; left: 50%; bottom: -30%; transform: translateX(-50%); width: 1000px; max-width: 120vw; height: 640px; pointer-events: none; z-index: 0; background: radial-gradient(ellipse at center, rgba(var(--amber-rgb),0.18), rgba(var(--gold-rgb),0.06) 42%, transparent 70%); }
+    .final-cta .wrap { position: relative; z-index: 2; }
+    .final-cta h2 { font-family: var(--f-display); color: var(--white); font-weight: 800; font-size: clamp(2.2rem,5vw,3.8rem); margin: 0 0 20px; }
+    .final-cta .section-sub { margin-bottom: 36px; }
+
+    /* Footer */
+    .footer { background: var(--footer-bg); padding: 56px 0 40px; border-top: 1px solid rgba(var(--gold-rgb),0.12); }
+    .footer-inner { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+    .footer-tag { font-family: var(--f-head); color: var(--silver); font-size: 0.95rem; max-width: 460px; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; margin-top: 4px; }
+    .footer-links a { font-family: var(--f-head); font-size: 0.9rem; color: var(--silver); transition: color .25s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.82rem; color: rgba(156,163,170,0.7); margin-top: 8px; }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+    .reveal.in { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .flame, .scroll-ind { animation: none; }
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <nav class="nav" id="nav">
+    <div class="wrap nav-inner">
+      <a href="#home" class="badge" aria-label="The Inventors Arena home">
+        <svg width="42" height="36" viewBox="0 0 46 40" role="img" aria-label="The Inventors Arena badge">
+          <defs>
+            <linearGradient id="triEdge" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F2DC9B"/><stop offset="0.5" stop-color="#C9A84C"/><stop offset="1" stop-color="#8a6f2d"/></linearGradient>
+            <radialGradient id="flameG" cx="0.5" cy="0.7" r="0.7"><stop offset="0" stop-color="#FFF3C4"/><stop offset="0.45" stop-color="#E8B84B"/><stop offset="1" stop-color="#C9A84C"/></radialGradient>
+            <linearGradient id="triFace" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#16233d"/><stop offset="1" stop-color="#0A1628"/></linearGradient>
+          </defs>
+          <path d="M23 3 L43 37 L3 37 Z" fill="url(#triEdge)"/>
+          <path d="M23 8 L38.5 35 L7.5 35 Z" fill="url(#triFace)"/>
+          <g class="flame"><path d="M23 16 C26 19 26.5 23 24 26 C26.5 25.5 27 22 25.5 20 C28 22 28 26 25.5 28.5 C24.3 29.7 21.7 29.7 20.5 28.5 C18 26 18.5 22 21 20 C20 22 20.5 24.5 22 25 C20 22.5 21 18.5 23 16 Z" fill="url(#flameG)"/></g>
+        </svg>
+        <span class="badge-text">THE INVENTORS ARENA</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#meet-the-team">Meet the Team</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a class="btn btn--gold" href="#contact">Chat with an Inventor</a>
+      </div>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobileNav">
+    <button class="mobile-close" id="mobileClose" aria-label="Close menu">&times;</button>
+    <a href="#home">Home</a>
+    <a href="#meet-the-team">Meet the Team</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+    <a class="btn btn--gold" href="#contact">Chat with an Inventor</a>
+  </div>
+
+  <!-- ===================== HERO ===================== -->
+  <header class="hero tri-watermark" id="home">
+    <div class="wrap">
+      <p class="hero-pre">Welcome to the Arena</p>
+      <h1>Where Inventors &amp; <span class="accent">Investors</span> Meet</h1>
+      <p class="hero-sub">From a raw idea to a funded, market-ready invention &mdash; guided by the two experts who get inventors funded.</p>
+      <a class="btn btn--gold" href="#contact">Chat with an Inventor</a>
+    </div>
+    <a href="#meet-the-team" class="scroll-ind" aria-label="Scroll down">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    </a>
+  </header>
+
+  <hr class="gold-rule" />
+
+  <!-- ===================== MEET THE TEAM (VIDEO) ===================== -->
+  <section class="section section--charcoal tri-watermark" id="meet-the-team">
+    <div class="wrap center reveal">
+      <span class="pre-label">Our Experts</span>
+      <h2 class="section-head">Meet the Team</h2>
+      <p class="section-sub">Watch Ed &amp; Scott share how The Inventors Arena guides independent inventors from concept to funded, market-ready products.</p>
+      <div class="video-wrap">
+        <div class="video-frame">
+          <video controls playsinline preload="metadata"
+            src="https://d2xsxph8kpxj0f.cloudfront.net/310519663179695645/LqFNLLr2N3jd2qnpQcq32S/ed-scott-intro_55890c46.mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ===================== WHY US (VALUE CARDS) ===================== -->
+  <section class="section section--navy tri-watermark" id="why">
+    <div class="wrap center reveal">
+      <span class="pre-label">Why The Inventors Arena</span>
+      <h2 class="section-head">Everything You Need to Win</h2>
+      <p class="section-sub">We bring the patent, engineering, and business sides together &mdash; so your invention reaches the market and the funding it deserves.</p>
+    </div>
+    <div class="wrap">
+      <div class="cards">
+        <article class="card reveal">
+          <span class="card-ico"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 6.6L21 9l-5 4.1L17.6 20 12 16.2 6.4 20 8 13.1 3 9l6.6-.4z"/></svg></span>
+          <h3>Patent &amp; Engineering Expertise</h3>
+          <p>Protect your idea and build it right. Master patent search, avoid costly mistakes, and develop a product that holds up.</p>
+          <span class="pill pill--filled">US Patent Agent led</span>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></span>
+          <h3>Business &amp; Investor Readiness</h3>
+          <p>Strategic plans, valuation, and a pitch that lands. Walk into the room prepared to ask &mdash; and to win the funding.</p>
+          <span class="pill pill--filled">32+ years in business</span>
+        </article>
+        <article class="card reveal">
+          <span class="card-ico"><svg viewBox="0 0 24 24" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <h3>Idea-to-Funded Guidance</h3>
+          <p>A clear path from first spark to market-ready, funded product &mdash; with experienced inventors guiding every step.</p>
+          <span class="pill pill--filled">Proven roadmap</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <hr class="gold-rule" />
+
+  <!-- ===================== FINAL CTA ===================== -->
+  <section class="section section--navy final-cta tri-watermark" id="contact">
+    <div class="wrap reveal">
+      <h2>Ready to Enter the <span class="accent">Arena</span>?</h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;">Join the inventors turning their ideas into funded, market-ready products with The Inventors Arena team.</p>
+      <a class="btn btn--gold" href="#contact">Chat with an Inventor</a>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <a href="#home" class="badge" aria-label="The Inventors Arena home">
+        <svg width="48" height="42" viewBox="0 0 46 40" role="img" aria-label="The Inventors Arena badge">
+          <path d="M23 3 L43 37 L3 37 Z" fill="url(#triEdge)"/>
+          <path d="M23 8 L38.5 35 L7.5 35 Z" fill="url(#triFace)"/>
+          <g class="flame"><path d="M23 16 C26 19 26.5 23 24 26 C26.5 25.5 27 22 25.5 20 C28 22 28 26 25.5 28.5 C24.3 29.7 21.7 29.7 20.5 28.5 C18 26 18.5 22 21 20 C20 22 20.5 24.5 22 25 C20 22.5 21 18.5 23 16 Z" fill="url(#flameG)"/></g>
+        </svg>
+        <span class="badge-text">THE INVENTORS ARENA</span>
+      </a>
+      <p class="footer-tag">Where inventors &amp; investors meet &mdash; from a raw idea to a funded, market-ready invention.</p>
+      <div class="footer-links">
+        <a href="#meet-the-team">Meet the Team</a>
+        <a href="#why">Why Us</a>
+        <a href="#contact">Chat with an Inventor</a>
+      </div>
+      <p class="footer-copy">&copy; <span id="year">2026</span> The Inventors Arena. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky nav background on scroll
+    var nav = document.getElementById('nav');
+    var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 40); };
+    onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+    // Mobile menu
+    var hamburger = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobileNav');
+    var mobileClose = document.getElementById('mobileClose');
+    var openMenu = function () { mobileNav.classList.add('open'); hamburger.setAttribute('aria-expanded', 'true'); document.body.style.overflow = 'hidden'; };
+    var closeMenu = function () { mobileNav.classList.remove('open'); hamburger.setAttribute('aria-expanded', 'false'); document.body.style.overflow = ''; };
+    hamburger.addEventListener('click', openMenu);
+    mobileClose.addEventListener('click', closeMenu);
+    mobileNav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
+
+    // Scroll reveal
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+    // Current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
